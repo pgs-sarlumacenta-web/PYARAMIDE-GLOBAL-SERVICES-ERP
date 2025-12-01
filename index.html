@@ -1,96 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PGS-SARLU Management</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class', // Enable dark mode using a class
-        theme: {
-          extend: {
-            colors: {
-              'pgs-red': '#E53E3E',
-              'pgs-blue': '#3B82F6',
-              'pgs-white': '#FFFFFF',
-              'pgs-bg-light': '#F7FAFC',
-              'pgs-bg-dark': '#1A202C',
-              'pgs-text-light': '#1A202C',
-              'pgs-text-dark': '#EDF2F7',
-              'pgs-border-light': '#E2E8F0',
-              'pgs-border-dark': '#4A5568',
-              // Module specific colors
-              'academie-blue': '#3B82F6',
-              'studio-red': '#E53E3E',
-              'decor-yellow': '#FBBF24',
-              'shop-green': '#10B981',
-              'achats-purple': '#8B5CF6',
-              'finances-blue': '#0EA5E9',
-              'personnel-indigo': '#6366F1',
-              'clients-teal': '#14B8A6',
-              'wifizone-orange': '#F97316',
-              'securite-gray': '#64748B',
-              'admin-gray': '#475569',
-            },
-            keyframes: {
-              'fade-in': {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
-            },
-            animation: {
-              'fade-in': 'fade-in 0.5s ease-out forwards',
-            }
-          },
-        },
-      }
-    </script>
-    <style type="text/tailwindcss">
-      @layer components {
-        .btn-primary {
-          @apply px-4 py-2 text-white font-semibold rounded-lg shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
-        }
-        .btn-primary-icon {
-          @apply p-2 text-white font-semibold rounded-full shadow-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
-        }
-        .btn-secondary {
-          @apply px-4 py-2 font-semibold rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 text-gray-700 dark:text-gray-200;
-        }
-        .input-style {
-          @apply mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm bg-gray-50 dark:bg-gray-700 dark:text-white h-10 px-3;
-        }
-        .input-style-readonly {
-          @apply mt-1 block w-full rounded-md border-gray-200 dark:border-gray-700 shadow-sm sm:text-sm bg-gray-100 dark:bg-gray-800 text-gray-500 cursor-not-allowed h-10 px-3;
-        }
-        label {
-            @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1;
-        }
-      }
-    </style>
+    <!-- Scripts pour l'export PDF/Image (chargés via CDN car souvent problématiques en npm pur sans config complexe) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
-<script type="importmap">
+  <script type="importmap">
 {
   "imports": {
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
-    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "vite": "https://aistudiocdn.com/vite@^7.2.4",
-    "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/",
     "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
-    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.84.0"
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.86.0"
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-pgs-bg-light dark:bg-pgs-bg-dark text-pgs-text-light dark:text-pgs-text-dark">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
